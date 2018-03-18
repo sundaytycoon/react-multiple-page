@@ -7,9 +7,14 @@ export default class Section1 extends Component{
     super(props)
     this.props.pageController.message("메시지를 작성중입니다 정말 이 페이지를 떠나시겠습니까?")
   }
+
   render() {
-    const { inputs, handleChange, handleWhen,
-      pageController } = this.props
+    const {
+      inputs, // custom
+      handleChange, // custom
+      handleWhen, // custom
+      pageController, // from `react-multiple-page` property. that have a role control about this lib
+    } = this.props
 
     const email =  shortid.generate()
     const password = shortid.generate()

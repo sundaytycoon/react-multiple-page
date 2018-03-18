@@ -6,13 +6,15 @@ export default class Section3 extends Component{
     this.props.pageController.message("메시지를 작성중입니다 정말 이 페이지를 떠나시겠습니까?")
   }
   render() {
-    const { inputs, handleChange, pageController } = this.props
+    const {
+      pageController, // from `react-multiple-page` property. that have a role control about this lib
+    } = this.props
 
     return (
       <div className="page">
         <div className="form-control">
           <p className="attr">
-            Contratulation! Now, you are in my service!
+            <h1>Contratulation! Now, you are in my service!</h1>
           </p>
         </div>
         <div className="form-control">

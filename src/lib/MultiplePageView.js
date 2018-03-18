@@ -57,27 +57,24 @@ class MultiplePageView extends Component{
 
     if(!location.state) location.state = { page: 0 }
 
-    console.log(history)
     return (
       <Fragment>
-        <div>
-          {
-            pages
-              .map((PageComponent, index) => (
-                <PageComponent
-                  key={index}
-                  pageController={{
-                    nextPage,
-                    prevPage,
-                    when,
-                    message,
-                  }}
-                  {...this.props}
-                />))
-              .filter((_, index) => index === location.state.page)
-          }
-          <Prompt when={this.state.when} message={this.state.message}/>
-        </div>
+        {
+          pages
+            .map((PageComponent, index) => (
+              <PageComponent
+                key={index}
+                pageController={{
+                  nextPage,
+                  prevPage,
+                  when,
+                  message,
+                }}
+                {...this.props}
+              />))
+            .filter((_, index) => index === location.state.page)
+        }
+        <Prompt when={this.state.when} message={this.state.message}/>
       </Fragment>
     )
 

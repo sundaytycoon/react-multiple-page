@@ -34,7 +34,7 @@ export default class MainPage extends Component{
 
     return (
       <NormalPage header={this.header}>
-        getting started `react-multiple-page` !
+        <h1> getting started `react-multiple-page` ! </h1>
       </NormalPage>
     )
   }
