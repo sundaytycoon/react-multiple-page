@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 import MultiplePageView from 'lib/MultiplePageView'
-import { Prompt } from 'react-router-dom'
 
 import NormalPage from 'components/templates/NormalPage'
 import Section1 from './Section1'
@@ -48,11 +47,12 @@ export default class FormPage extends Component{
     })
 
   
-  dirtyCheck = () =>
+  handleWhen = () =>
     Object.keys(this.state.inputs)
       .filter(key => this.state.inputs[key].value.length > 3) 
       .length !== 0 // if it was written 3 + 1 more characters
   
+  handle
 
   render() {
 
@@ -61,12 +61,9 @@ export default class FormPage extends Component{
         getting started `react-multiple-page` !
         <MultiplePageView
           {...this.state}
-          pathname={this.props.location.pathname}
           pages={[Section1, Section2, Section3]}
-          // transmit custom props
-          when={this.dirtyCheck()}
-          message={"메시지를 작성중입니다 정말 이 페이지를 떠나시겠습니까?"}
           handleChange={this.handleChange}
+          handleWhen={this.handleWhen}
         />
       </NormalPage>
     )

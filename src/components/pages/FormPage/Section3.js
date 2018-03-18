@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 export default class Section3 extends Component{
   constructor(props) {
     super(props)
+    this.props.pageController.message("메시지를 작성중입니다 정말 이 페이지를 떠나시겠습니까?")
   }
   render() {
     const { inputs, handleChange, pageController } = this.props
