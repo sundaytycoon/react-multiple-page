@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
 import shortid from 'shortid'
 export default class Section2 extends Component{
-  constructor(props) {
-    super(props)
-  }
   render() {
     const {
       inputs, // custom

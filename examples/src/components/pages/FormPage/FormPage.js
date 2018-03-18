@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import MultiplePageView from 'lib/MultiplePageView'
+import MultiplePageView from 'react-multiple-page'
 
 import NormalPage from 'components/templates/NormalPage'
 import Section1 from './Section1'
@@ -8,31 +8,29 @@ import Section2 from './Section2'
 import Section3 from './Section3'
 
 export default class FormPage extends Component{
-  constructor(props) {
-    super(props)
-    this.header = {
-      title: 'Form Page'
-    }
-    this.state = {
-      inputs: {
-        email: {
-          value:'',
-          tips: '',
-        },
-        password: {
-          value:'',
-          tips: '',
-        },
-        nickname: {
-          value:'',
-          tips: '',
-        },
-        phone: {
-          value:'',
-          tips: '',
-        },
+  header = {
+    title: 'Form Page'
+  }
+
+  state = {
+    inputs: {
+      email: {
+        value:'',
+        tips: '',
       },
-    }
+      password: {
+        value:'',
+        tips: '',
+      },
+      nickname: {
+        value:'',
+        tips: '',
+      },
+      phone: {
+        value:'',
+        tips: '',
+      },
+    },
   }
   handleChange = (name, value) =>
     this.setState({

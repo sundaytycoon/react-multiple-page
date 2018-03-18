@@ -1,7 +1,12 @@
 # react-multiple-page
 
-It supports history.block or prevent 'Back button.' 
-It will be help when you build form tags in multiple page
+[![Build Status](https://travis-ci.org/gotsu/react-multiple-page.svg?branch=master)](https://travis-ci.org/gotsu/react-multiple-page)
+
+It supports history block and prevent 'Back button'. It will be help when you build form tags in multiple page
+
+# Installation
+
+> npm i --save react-multiple-page
 
 # Usage 
 
@@ -63,7 +68,7 @@ export default const Section1 = (props) => {
   return (
     <div className="page">
       <div className="form-control">
-        <h1> Hello, I'm Section1 </h1>
+        <h1> Hello, I am Section1 </h1>
       </div>
       <div className="form-control">
         <button className="half-button" onClick={pageController.prevPage}>Prev</button>
