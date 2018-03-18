@@ -6,7 +6,7 @@ import MainPage from 'components/pages/MainPage'
 import FormPage from 'components/pages/FormPage'
 
 
-const App = ({ location, history }) => (
+const App = () => (
   <Fragment>
     <BrowserRouter>
       <Switch>

@@ -1,18 +1,11 @@
 {
   "name": "react-multiple-page",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "react multiple page, It will be help when you make form tags on multiple pages ",
+  "main": "index.js",
+  "repository": "https://github.com/gotsu/react-multiple-page",
+  "author": "drake-jin <dydwls121200@gmail.com>",
+  "license": "WTFPL",
   "private": false,
-  "dependencies": {
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-router-dom": "^4.2.2",
-    "react-scripts": "1.1.1",
-    "shortid": "^2.2.8"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  }
+  "keywords": ["react", "multiple", "page", "drake-jin", "gotsu"]
 }
