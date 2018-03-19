@@ -7,6 +7,7 @@ class MultiplePageView extends Component{
   state = { when: this.props.when, message: this.props.message }
 
   nextPage = () => {
+    console.log('nextPage');
     const { location, history, pages } = this.props
     
     if ( location.state.page < pages.length ) history.push(location.pathname, { page : location.state.page + 1 })
@@ -19,6 +20,7 @@ class MultiplePageView extends Component{
   }
 
   prevPage = () => {
+    console.log('prevPage');
     const { location, history } = this.props
     if ( location.state.page > 0) history.goBack()
     else console.error(`
