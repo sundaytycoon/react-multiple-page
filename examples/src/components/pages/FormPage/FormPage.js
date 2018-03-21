@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+// import MultiplePageView from 'lib/MultiplePageView'
 import MultiplePageView from 'react-multiple-page'
 
 import NormalPage from 'components/templates/NormalPage'
@@ -13,7 +14,7 @@ export default class FormPage extends Component{
   }
 
   state = {
-    inputs: {
+  inputs: {
       email: {
         value:'',
         tips: '',
@@ -24,7 +25,7 @@ export default class FormPage extends Component{
       },
       nickname: {
         value:'',
-        tips: '',
+      tips: '',
       },
       phone: {
         value:'',

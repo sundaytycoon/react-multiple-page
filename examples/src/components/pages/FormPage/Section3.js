@@ -13,9 +13,7 @@ export default class Section3 extends Component{
     return (
       <div className="page">
         <div className="form-control">
-          <p className="attr">
-            <h1>Contratulation! Now, you are in my service!</h1>
-          </p>
+          <h1>Contratulation! Now, you are in my service!</h1>
         </div>
         <div className="form-control">
           <button className="half-button" onClick={pageController.prevPage}>Prev</button>

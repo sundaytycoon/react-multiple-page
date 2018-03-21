@@ -5584,10 +5584,11 @@ react-error-overlay@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-4.0.0.tgz#d198408a85b4070937a98667f500c832f86bd5d4"
 
-"react-multiple-page@file:..":
-  version "1.0.0"
+react-multiple-page@^1.0.1, "react-multiple-page@file:..":
+  version "1.0.1"
   dependencies:
     react "^16.2.0"
+    react-multiple-page "^1.0.1"
     react-router "^4.2.0"
     react-router-dom "^4.2.2"
 

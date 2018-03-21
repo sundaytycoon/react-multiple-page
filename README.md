@@ -63,8 +63,6 @@ import React from 'react'
 export default const Section1 = (props) => {
   const { pageController } = props // from `react-multiple-page` property. that have a role control about this lib
 
-  const nickname = shortid.generate()
-  const phone = shortid.generate()
   return (
     <div className="page">
       <div className="form-control">
@@ -101,9 +99,15 @@ https://github.com/gotsu/react-multiple-page/issues/2
 
 [WTFPL](http://www.wtfpl.net/)
 
+# Get more feedback
+
+- If you got an error using my library, Please email me or leave an issue. I'll fix ya immediately.
+- Any PR, Thanks.
+
+Anyway, I'm happy to help you
+
 
 # References
-
 
  1. history block GIST [robertgonzales/App.jsx](https://gist.github.com/robertgonzales/e54699212da497740845712f3648d98c)
  2. history block on [ReactTrainning/history](https://github.com/ReactTraining/history#blocking-transitions)

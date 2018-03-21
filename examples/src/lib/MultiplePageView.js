@@ -1,17 +1,30 @@
 import React, { Component, Fragment } from 'react'
-import { BrowserRouter, Prompt, Redirect } from 'react-router-dom'
+import { Prompt } from 'react-router-dom'
 
 import { withRouter } from 'react-router'
 
 class MultiplePageView extends Component{
-  state = { when: this.props.when, message: this.props.message }
+  state = { when: this.props.when, message: this.props.message, nextPage: false }
+
+
+  componentDidUpdate(_, nextState) {
+    const { location, history, pages } = this.props
+    const { state } = location
+
+    if(this.state.nextPage && !nextState.nextPage) {
+      this.setState({ when: nextState.when, nextPage: false })
+      history.push(location.pathname, { ...state, mp_page : state.mp_page + 1 })
+    }
+  }
+
 
   nextPage = () => {
     const { location, history, pages } = this.props
-    
-    if ( location.state.page < pages.length ) history.push(location.pathname, { page : location.state.page + 1 })
+    const { state } = location
+
+    if ( state.mp_page < pages.length ) this.setState({ when: false, nextPage: true })
     else console.error(`
-      You wanna go to page index ${location.state.page + 1} on MultiplePageView.
+      You wanna go to page index ${location.state.mp_page + 1} on MultiplePageView.
       But, You've set page by ${pages.length - 1} pages.
       You'd better check your code to change \`pageController.nextPage\` to \`<Link to="/anywhere" />\`
       Or location.pushState(path, { page: ??? }).
@@ -20,7 +33,7 @@ class MultiplePageView extends Component{
 
   prevPage = () => {
     const { location, history } = this.props
-    if ( location.state.page > 0) history.goBack()
+    if ( location.state.mp_page > 0) history.goBack()
     else console.error(`
       You are in index 0 on MultiplePageView.
       Have no more previous Page.
@@ -28,9 +41,10 @@ class MultiplePageView extends Component{
       Or location.pushState(path, { page: ??? }).
     `)
   }
-  goPage = (page) => {
+  goPage = (mp_page) => {
     const { location, history, pages } = this.props
-    if ( page >= 0 && page < pages.length) history.replace(location.pathname, { page })
+    const { state } = location
+    if ( mp_page >= 0 && mp_page < pages.length) history.replace(location.pathname, { ...state, mp_page })
     else console.error(`
     You are in index 0 on MultiplePageView.
     Have no more previous Page.
@@ -53,10 +67,10 @@ class MultiplePageView extends Component{
 
   render() {
     const { nextPage, prevPage, when, message } = this
-    const { location, history, pages } = this.props
+    const { location, pages } = this.props
+    const { state } = location
 
-    if(!location.state) location.state = { page: 0 }
-
+    if(!state || !state.mp_page) location.state = { ...state, mp_page: 0 }
     return (
       <Fragment>
         {
@@ -72,7 +86,7 @@ class MultiplePageView extends Component{
                 }}
                 {...this.props}
               />))
-            .filter((_, index) => index === location.state.page)
+            .filter((_, index) => index === location.state.mp_page)
         }
         <Prompt when={this.state.when} message={this.state.message}/>
       </Fragment>
