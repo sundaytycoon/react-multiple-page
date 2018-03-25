@@ -83,13 +83,39 @@ export default const Section1 = (props) => {
 2. message: ([ string | func ])
 3. pages: ([ Array: ...Components])
 
-# Transfer controller to Section Component
+# Transfer controller to `Section` Component
+
+ Docs. Usage. 3 It will be help you.
 
 1. pageController: { nextPage, prevPage, goPage, when, message }
+
+# !! Caution !!
+
+**This source code using `location.state`,**
+
+When you need to use `location.state` for modal, popup and etc.., Please watch out drop away 'mp_page' in location.state
+This source code use location.state. So, I recommand your source code change like this. 
+
+``` js
+  // (...)
+  const { location, history } = this.props
+  // history.replace(location.pathname, { ...location.state, mp_page })
+  history.push(location.pathname, { ...location.state, mp_page })
+  // (...)
+```
+
 
 # Specific Dependencies
 
 1. react-router v4
+
+# See examples directory.
+
+It's in
+
+1. test code,
+2. lib/MultiplePageView.js  that's core source.
+3. examples are here.
 
 # To do
 

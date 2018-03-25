@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import shortid from 'shortid'
 
 
 export default class Section1 extends Component{
@@ -16,12 +15,12 @@ export default class Section1 extends Component{
       pageController, // from `react-multiple-page` property. that have a role control about this lib
     } = this.props
 
-    const email =  shortid.generate()
-    const password = shortid.generate()
+    const email =  'section1-email'
+    const password = 'section1-password'
     return (
       <div className="page">
         <div className="form-control">
-          <p className="attr">E-Mail</p>
+          <p className="attr">E-Mail1</p>
           <label htmlFor={email}>
             <input
               type="email"

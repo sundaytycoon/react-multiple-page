@@ -1,6 +1,6 @@
 {
   "name": "react-multiple-page",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "react multiple page, It will be help when you make form tags on multiple pages ",
   "main": "./lib/MultiplePageView.js",
   "repository": {

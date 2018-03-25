@@ -22,7 +22,7 @@ class MultiplePageView extends Component{
     const { location, history, pages } = this.props
     const { state } = location
 
-    if ( state.mp_page < pages.length ) this.setState({ when: false, nextPage: true })
+    if ( state.mp_page < pages.length - 1 ) this.setState({ when: false, nextPage: true })
     else console.error(`
       You wanna go to page index ${location.state.mp_page + 1} on MultiplePageView.
       But, You've set page by ${pages.length - 1} pages.
@@ -66,11 +66,12 @@ class MultiplePageView extends Component{
   }
 
   render() {
-    const { nextPage, prevPage, when, message } = this
+    const { nextPage, goPage, prevPage, when, message } = this
     const { location, pages } = this.props
     const { state } = location
 
     if(!state || !state.mp_page) location.state = { ...state, mp_page: 0 }
+
     return (
       <Fragment>
         {
@@ -81,6 +82,7 @@ class MultiplePageView extends Component{
                 pageController={{
                   nextPage,
                   prevPage,
+                  goPage,
                   when,
                   message,
                 }}

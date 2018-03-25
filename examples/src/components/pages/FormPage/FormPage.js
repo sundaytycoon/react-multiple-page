@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
-// import MultiplePageView from 'lib/MultiplePageView'
-import MultiplePageView from 'react-multiple-page'
+import MultiplePageView from 'lib/MultiplePageView'
+// import MultiplePageView from 'react-multiple-page'
 
 import NormalPage from 'components/templates/NormalPage'
 import Section1 from './Section1'

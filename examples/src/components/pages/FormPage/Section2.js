@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import shortid from 'shortid'
+
 export default class Section2 extends Component{
   render() {
     const {
@@ -9,8 +9,8 @@ export default class Section2 extends Component{
       pageController, // from `react-multiple-page` property. that have a role control about this lib
     } = this.props
 
-    const nickname = shortid.generate()
-    const phone = shortid.generate()
+    const nickname = 'section2-nickname'
+    const phone = 'section2-phone'
     return (
       <div className="page">
         <div className="form-control">
