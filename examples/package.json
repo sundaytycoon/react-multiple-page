@@ -8,29 +8,11 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "devDependencies": {
-    "babel-jest": "^22.4.3",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "chai": "^4.1.2",
-    "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
-    "enzyme-to-json": "^3.3.3",
-    "jest": "^21.0.0",
-    "react-test-renderer": "^16.2.0",
-    "sinon": "^4.4.8"
-  },
   "dependencies": {
-    "history": "^4.7.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-multiple-page": "file:..",
+    "react-multiple-page": "^1.0.3",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.1"
-  },
-  "jest": {
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ]
   }
 }

@@ -6145,8 +6145,9 @@ react-multiple-page@^1.0.1:
     react-router "^4.2.0"
     react-router-dom "^4.2.2"
 
-"react-multiple-page@file:..":
+react-multiple-page@^1.0.3:
   version "1.0.3"
+  resolved "https://registry.yarnpkg.com/react-multiple-page/-/react-multiple-page-1.0.3.tgz#3f91d79c76233a2dbde338da3b48f08999f63e81"
   dependencies:
     react "^16.2.0"
     react-multiple-page "^1.0.1"

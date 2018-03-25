@@ -2,32 +2,16 @@
   "name": "react-multiple-page",
   "version": "1.0.3",
   "description": "react multiple page, It will be help when you make form tags on multiple pages ",
-  "main": "./lib/MultiplePageView.js",
+  "private": false,
+  "author": "drake-jin <dydwls121200@gmail.com>",
+  "homepage": "https://github.com/gotsu/react-multiple-page#readme",
+  "bugs": {
+    "url": "https://github.com/gotsu/react-multiple-page/issues"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gotsu/react-multiple-page.git"
   },
-  "author": "drake-jin <dydwls121200@gmail.com>",
-  "files": [
-    "lib"
-  ],
-  "scripts": {
-    "build": "rm -rf ./lib && babel examples/src/lib --out-dir lib",
-    "prepublish": "npm run build",
-    "test": "jest"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "jest": "^20.0.0"
-  },
-  "bugs": {
-    "url": "https://github.com/gotsu/react-multiple-page/issues"
-  },
-  "license": "WTFPL",
-  "private": false,
   "keywords": [
     "react",
     "multiple",
@@ -35,15 +19,51 @@
     "drake-jin",
     "gotsu"
   ],
+  "license": "WTFPL",
+
+
+  "files": [
+    "lib"
+  ],
+  "directories": {
+    "lib": "lib"
+  },
+  "main": "./lib/MultiplePageView.js",
+
+
+
+
+  "scripts": {
+    "build": "rm -rf ./lib && babel examples/src/lib --out-dir lib && yarn test",
+    "prepublish": "npm run build",
+    "test": "jest"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
+  },
+
+
+
   "dependencies": {
     "react": "^16.2.0",
-    "react-multiple-page": "^1.0.1",
+    "react-dom": "^16.2.0",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2"
   },
-  "homepage": "https://github.com/gotsu/react-multiple-page#readme",
-  "directories": {
-    "example": "examples",
-    "lib": "lib"
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-jest": "^22.4.3",
+    "babel-preset-env": "^1.6.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.3",
+    "jest": "^21.0.0",
+    "chai": "^4.1.2",
+    "sinon": "^4.4.8"
   }
 }
