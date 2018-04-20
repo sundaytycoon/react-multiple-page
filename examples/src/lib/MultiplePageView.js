@@ -13,7 +13,7 @@ class MultiplePageView extends Component{
 
     if(this.state.nextPage && !nextState.nextPage) {
       this.setState({ when: nextState.when, nextPage: false })
-      history.push(location.pathname, { ...state, mp_page : state.mp_page + 1 })
+      history.push(`${location.pathname}${location.search}${location.hash}`, { ...state, mp_page : state.mp_page + 1 })
     }
   }
 
@@ -44,13 +44,14 @@ class MultiplePageView extends Component{
   goPage = (mp_page) => {
     const { location, history, pages } = this.props
     const { state } = location
-    if ( mp_page >= 0 && mp_page < pages.length) history.replace(location.pathname, { ...state, mp_page })
+
+    if ( mp_page >= 0 && mp_page < pages.length) history.replace(`${location.pathname}${location.search}${location.hash}`, { ...state, mp_page })
     else console.error(`
-    You are in index 0 on MultiplePageView.
-    Have no more previous Page.
-    You'd better check your code to change \`pageController.goPage\` to \`<Link to="/anywhere" />\`
-    Or location.pushState(path, { page: ??? }).
-  `)
+      You are in index 0 on MultiplePageView.
+      Have no more previous Page.
+      You'd better check your code to change \`pageController.goPage\` to \`<Link to="/anywhere" />\`
+      Or location.pushState(path, { page: ??? }).
+    `)
   }
 
   when = (when) => {
